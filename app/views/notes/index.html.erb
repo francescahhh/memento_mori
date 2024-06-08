@@ -2,10 +2,11 @@
 
     <%= link_to "About Us", about_path %>
 
-<ul>
   <% @notes.each do |note| %>
-    <li>
-      <%= note.title %>
-    </li>
+    <div>
+        <%= render(NoteComponent.new(note: note)) do %>
+    <% end %>
+    </div>
   <% end %>
-</ul>
+
+<%= link_to "New Note", new_note_path %>
