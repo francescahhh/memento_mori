@@ -4,6 +4,6 @@
 
 @layer components {
   .button {
-    @apply bg-gray-100 px-4 py-2 rounded hover:bg-gray-200;
+    @apply bg-amber-50 px-4 py-2 rounded hover:bg-red-800;
   }
 }
