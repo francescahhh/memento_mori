@@ -5,7 +5,7 @@
     <%= link_to "New Postcard", new_note_path, class: "button" %>
 
   <% @notes.each do |note| %>
-    <div class="p-4 border rounded m-4">
+    <div class="p-4 border rounded m-4 bg-amber-50">
         <%= render(NoteComponent.new(note: note)) do %>
     <% end %>
     </div>

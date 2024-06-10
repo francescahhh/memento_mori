@@ -2,24 +2,26 @@
   <%= link_to "Home", notes_path, class: "button" %>
      <%= link_to "About Us", about_path, class: "button" %>
 
+<div class="m-4">
 <%= form_with model: @note do |form| %>
   <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "text-amber-50"%><br>
+    <%= form.text_field :title, class: "bg-amber-50 rounded" %>
     <% @note.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+    <%= form.label :body, class: "text-amber-50" %><br>
+    <%= form.text_area :body, class: "bg-amber-50 rounded" %><br>
     <% @note.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div class="button w-[143px]">
-    <%= form.submit "Send Postcard"%>
+  <div>
+    <%= form.submit "Send Postcard", class: "button cursor-pointer" %>
   </div>
 <% end %>
+</div>
