@@ -4,6 +4,9 @@
 
 @layer components {
   .button {
-    @apply bg-amber-50 px-4 py-2 rounded hover:bg-red-800;
+    @apply bg-amber-50 font-serif px-4 py-2 rounded hover:bg-red-800 hover:text-amber-50;
+  }
+  .base-text {
+    @apply text-amber-50 font-serif;
   }
 }
