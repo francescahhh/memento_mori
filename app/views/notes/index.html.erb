@@ -1,8 +1,6 @@
 <h1 class="base-text">Memento Mori</h1>
-
-    <%= link_to "About Us", about_path, class: "button" %>
-
-    <%= link_to "New Postcard", new_note_path, class: "button" %>
+       <%= render(NavigationComponent.new) do %>
+    <% end %>
 
   <% @notes.each do |note| %>
     <div class="p-4 border rounded m-4 bg-amber-50">

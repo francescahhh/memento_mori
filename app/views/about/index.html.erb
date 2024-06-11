@@ -1,5 +1,7 @@
 <h1 class="base-text">About Us</h1>
-  <%= link_to "Home", notes_path, class: "button" %>
+       <%= render(NavigationComponent.new) do %>
+    <% end %>
+
       <div class="m-6 p-2 rounded bg-amber-50 font-serif">
     If you or someone you know is struggling with thoughts of suicide, please call, text, or chat 988 for the Suicide and Crisis Lifeline. 
     </div>
@@ -9,6 +11,11 @@
     <p class="base-text">
     In 2022, I lost my dad to suicide. Over night, I inadvertently became an advocate for suicide prevention, mental illness, and grief. 
     </p>
-    <p class="text-sm base-text rounded p-2 m-6 absolute inset-x-0 bottom-0">
-        Please note that any postcards containing racist, homophobic, misogynistic, transphobic, xenophobic, ableist, or otherwise abusive content will be removed. Bigots will not be granted entry into our little corner of the Great Beyond. 
-    </p>
+    <div class="text-sm font-serif bg-amber-50 rounded p-1 m-6">
+    <p>
+        Please note that any postcards containing racist, homophobic, misogynistic, transphobic, xenophobic, ableist, or otherwise abusive content will be removed. 
+        </p>
+        <p>
+        Bigots will not be granted entry into our little corner of the Great Beyond. 
+        </p>
+    </div>
