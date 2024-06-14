@@ -1,8 +1,15 @@
-<div class="font-serif">
+<div class="font-serif bg-amber-50 border p-4 rounded m-4">
+
 <div class="font-extrabold">
 <%= @note.title %>
 </div>
+
 <div>
 <%= @note.body %>
 </div>
+
+    <% if helpers.current_user.id == @note.user_id %>
+    <%= button_to "Delete", @note, method: :delete, class: "button" %>
+       <% end %>
+    </div>
 </div>

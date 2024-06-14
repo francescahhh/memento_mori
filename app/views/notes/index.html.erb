@@ -3,7 +3,7 @@
     <% end %>
  <% if user_signed_in? %>
   <% @notes.each do |note| %>
-    <div class="p-4 border rounded m-4 bg-amber-50">
+    <div>
         <%= render(NoteComponent.new(note: note)) do %>
     <% end %>
     </div>
