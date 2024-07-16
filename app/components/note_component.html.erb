@@ -1,9 +1,10 @@
-<div class="font-serif bg-amber-50 border rounded m-4 p-4">
-<div class="font-extrabold">
-<%= @note.title %>
-</div>
-<%= @note.body %>
+<div class="font-serif bg-amber-50 border rounded m-4 p-4 relative">
+    <div class="font-extrabold">
+        <%= @note.title %>
+    </div>
+    <%= @note.body %>
     <% if helpers.current_user.id == @note.user_id %>
-    <%= button_to "Delete", @note, method: :delete, class: "button" %>
-       <% end %>
+            <%= button_to "Delete", @note, method: :delete, class: "button" %>
+    <% end %>
 </div>
+
