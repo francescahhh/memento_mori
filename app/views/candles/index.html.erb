@@ -6,10 +6,11 @@
   <% content_for :title, "Candles" %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Candles</h1>
-    <%= link_to "New candle", new_candle_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="font-bold base-text text-4xl">Candles</h1>
+    <%= link_to "New candle", new_candle_path, class: "button cursor-pointer" %>
   </div>
-
+       <%= render(NavigationComponent.new) do %>
+    <% end %>
   <div id="candles" class="min-w-full">
     <% @candles.each do |candle| %>
       <%= render candle %>
