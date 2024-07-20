@@ -44,7 +44,6 @@ class CandlesController < ApplicationController
       @candle = Candle.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def candle_params
       params.require(:candle).permit(:name, :lit)
     end

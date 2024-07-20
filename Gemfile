@@ -62,15 +62,16 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-end
-
 gem "tailwindcss-rails", "~> 2.6"
 
-gem 'devise'
+gem "devise"
 
 gem "font-awesome-sass"
 
+group :development, :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "selenium-webdriver"
+end
