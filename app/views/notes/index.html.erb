@@ -1,14 +1,11 @@
-<h1 class="base-text">Memento Mori</h1>
-
-
+<% if user_signed_in? %>
   <div class="flex justify-between items-center">
    <h2 class="font-bold base-text">Postcards</h2>
       <%= link_to "New Postcard", new_note_path, class: "button cursor-pointer" %>
   </div>
-       <%= render(NavigationComponent.new) do %>
-    <% end %>
+
     
- <% if user_signed_in? %>
+
   <% @notes.each do |note| %>
     <div>
         <%= render(NoteComponent.new(note: note)) do %>
