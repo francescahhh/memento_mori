@@ -12,8 +12,8 @@
   </head>
 
   <body class="bg-stone-900">
-    <main class="container mx-auto mt-28 px-5 prose">
-        <h1 class="base-text">Memento Mori</h1>
+    <main class="container mx-auto mt-15 px-5 prose">
+     <%= image_tag("memento_mori.svg", :alt => "memento mori") %>
                <%= render(NavigationComponent.new) do %>
     <% end %>
           <p class="notice base-text text-red-800"><%= notice %></p>
