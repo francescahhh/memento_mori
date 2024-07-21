@@ -20,6 +20,7 @@ class CandlesController < ApplicationController
     @candle.user = current_user  
 
       if @candle.save
+        enqueue_unlit_job if @candle.lit?
         redirect_to candles_path, notice: "Candle created!"
       else
         render :new, status: :unprocessable_entity
@@ -28,6 +29,7 @@ class CandlesController < ApplicationController
 
   def update
       if @candle.update(candle_params)
+        enqueue_unlit_job if @candle.lit?
         redirect_to candles_path, notice: "Candle updated."
       else
          render :edit, status: :unprocessable_entity
@@ -46,5 +48,9 @@ class CandlesController < ApplicationController
 
     def candle_params
       params.require(:candle).permit(:name, :lit)
+    end
+    
+    def enqueue_unlit_job
+      CandleUnlitJob.set(wait: 24.hours).perform_later(@candle.id)
     end
 end

@@ -6,6 +6,7 @@
   </div>
   <div id="candles" class="min-w-full">
     <% @candles.each do |candle| %>
+         <%= image_tag("in_memory_of.svg", :alt => "candle") %>
       <%= render candle %>
       <p>
         <%= link_to "Show this candle", candle, class: "button" %>
