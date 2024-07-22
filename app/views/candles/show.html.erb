@@ -5,7 +5,7 @@
     <% end %>
     <%= render(CandleComponent.new(candle: @candle)) %>
     <div class="text-center mt-6"> 
-      <%= link_to "Update this candle?", edit_candle_path(@candle), class: "button" %>
+      <%= link_to "Update this candle?", edit_candle_url(@candle), class: "button" %>
     </div>
   </div>
 </div>

@@ -20,7 +20,7 @@ class NotesController < ApplicationController
     @note.user = current_user     
 
     if @note.save
-      redirect_to notes_path, notice: "Postcard created!"
+      redirect_to notes_url, notice: "Postcard created!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class NotesController < ApplicationController
 
   def update
       if @note.update(note_params)
-        redirect_to notes_path, notice: "Postcard updated."
+        redirect_to notes_url, notice: "Postcard updated."
       else
       render :edit, status: :unprocessable_entity 
     end
@@ -36,7 +36,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy!
-    redirect_to notes_path, notice: "Postcard deleted."
+    redirect_to notes_url, notice: "Postcard deleted."
   end
 
   private

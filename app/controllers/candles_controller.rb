@@ -21,7 +21,7 @@ class CandlesController < ApplicationController
 
       if @candle.save
         enqueue_unlit_job if @candle.lit?
-        redirect_to candles_path, notice: "Candle created!"
+        redirect_to candles_url notice: "Candle created!"
       else
         render :new, status: :unprocessable_entity
       end
@@ -30,7 +30,7 @@ class CandlesController < ApplicationController
   def update
       if @candle.update(candle_params)
         enqueue_unlit_job if @candle.lit?
-        redirect_to candles_path, notice: "Candle updated."
+        redirect_to candles_url, notice: "Candle updated."
       else
          render :edit, status: :unprocessable_entity
       end
@@ -38,7 +38,7 @@ class CandlesController < ApplicationController
 
   def destroy
     @candle.destroy!
-    redirect_to candles_path, notice: "Candle deleted."
+    redirect_to candles_url, notice: "Candle deleted."
   end
 
   private
