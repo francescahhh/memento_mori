@@ -1,18 +1,11 @@
 <div class="mx-auto md:w-2/3 w-full flex relative">
-  <!-- Container for the candle and delete button -->
   <div class="relative w-full">
-    <!-- Delete button positioned in the upper left corner, slightly down -->
-    <%= button_to @candle, method: :delete, class: "absolute top-10 left-2 bg-red-800 px-2  rounded-3xl hover:text-red-800 text-amber-50 hover:bg-amber-50 z-10" do %>
+    <%= button_to @candle, method: :delete, class: "absolute top-7 left-10 bg-red-800 px-2 rounded-3xl hover:text-red-800 text-amber-50 hover:bg-amber-50 z-10" do %>
       <i class="fa-solid fa-xmark text-sm"></i>
     <% end %>
-
-    <!-- Candle component -->
     <%= render(CandleComponent.new(candle: @candle)) %>
-  </div>
-  
-  <!-- Edit and Back links -->
-  <div class="flex flex-col ml-4">
-    <%= link_to "Edit", edit_candle_path(@candle), class: "button mb-2" %>
-    <%= link_to "Back to candles", candles_path, class: "button" %>
+    <div class="text-center mt-6"> 
+      <%= link_to "Update this candle?", edit_candle_path(@candle), class: "button" %>
+    </div>
   </div>
 </div>

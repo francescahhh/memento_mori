@@ -1,4 +1,26 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h2 class="base-text">Editing candle</h2>
-  <%= render "form", candle: @candle %>
+<h2 class="base-text">Editing Candle</h2>
+<div class="m-4">
+  <%= form_with model: @candle do |form| %>
+  <div>
+    <%= form.label :name, class: "base-text" %><br>
+    <%= form.text_field :name, class: "bg-amber-50 rounded" %>
+    <% @candle.errors.full_messages_for(:name).each do |message| %>
+      <div class="error-text"><%= message %></div>
+    <% end %>
+  </div>
+
+<div class="p-2">
+    <%= form.check_box :lit, class: "bg-amber-50 hover:pointer-click" %>
+    <%= form.label "light this candle?", class: "base-text inline ml-2" %>
+    <% @candle.errors.full_messages_for(:lit).each do |message| %>
+      <div class="error-text"><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.submit "Update Candle", class: "button cursor-pointer" %>
+      <i class="fa-solid fa-fire-flame-curved p-2 text-amber-50 text-2xl"></i>
+  </div>
+<% end %>
 </div>
+
