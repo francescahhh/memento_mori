@@ -5,5 +5,8 @@
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
