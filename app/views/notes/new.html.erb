@@ -3,6 +3,15 @@
 <div class="m-4">
 <%= form_with model: @note do |form| %>
   <div>
+    <%= form.label :recipient, class: "base-text"%><br>
+    <%= form.text_field :recipient, class: "bg-amber-50 rounded" %>
+    <% @note.errors.full_messages_for(:recipient).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+
+  <div>
     <%= form.label :title, class: "base-text"%><br>
     <%= form.text_field :title, class: "bg-amber-50 rounded" %>
     <% @note.errors.full_messages_for(:title).each do |message| %>

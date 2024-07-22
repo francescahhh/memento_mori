@@ -20,9 +20,13 @@
       <div class="mb-4 mt-12">
         <div class="text-sm text-gray-500">Address:</div>
         <div class="text-gray-700">
-          <p>Recipient Name</p>
-          <p>Street Address</p>
-          <p>City, State ZIP</p>
+        <p>to 
+        <% if @note.recipient.present? %>
+             <%= @note.recipient %>
+        <%else%>
+   Anonymous
+          <% end %>
+          </p>
         </div>
       </div>
       <div class="mt-8">
