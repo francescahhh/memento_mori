@@ -1,39 +1,32 @@
-<div class="font-serif bg-amber-50 border border-gray-300 rounded m-4 relative max-w-md mx-auto">
-  <div class="flex flex-col md:flex-row relative">
+<div class="font-serif bg-amber-50 rounded m-2 dark-text relative mx-auto h-96">
+  <div class="flex flex-col md:flex-row relative h-full">
     <!-- Left side for the message -->
     <div class="md:w-2/3 p-4">
-      <div class="font-extrabold text-lg mb-2">
+      <% if helpers.current_user.id == @note.user_id %>
+        <%= button_to @note, method: :delete, class: "hover:bg-red-800 px-2 rounded text-amber-50 bg-stone-900 float-right" do %>
+          <i class="fa-solid fa-xmark"></i>
+        <% end %>
+      <% end %>
+      <div class="font-extrabold text-lg">
         <%= @note.title %>
       </div>
-      <p class="text-gray-700 mb-4"><%= @note.body %></p>
-      <% if helpers.current_user.id == @note.user_id %>
-        <%= button_to "Delete", @note, method: :delete, class: "bg-red-500 text-white py-1 px-2 rounded shadow-md" %>
-      <% end %>
+      <div class="flex-wrap break-words"><%= @note.body %></div>
     </div>
 
     <!-- Right side for the address -->
-    <div class="border-l-2 border-gray-300">
-        <%= image_tag("stamp.svg", :alt => "stamp") %>
-      <div class="absolute top-0 border-l-2 right-0 m-2 p-1">
-        <% if helpers.current_user.id == @note.user_id %>    
-            <%= button_to "Delete", @note, method: :delete, class: "button py-1 px-2 " %>
-        <% end %>
-      </div>
-      <div class="mb-4 mt-12">
-        <div class="text-sm text-gray-500">Address:</div>
-        <div class="text-gray-700">
-        <p> to 
+    <div class="border-l-2 border-gray-300 px-5 md:w-1/3 relative flex items-center justify-center">
+      <%= image_tag("stamp.svg", alt: "stamp", class: "absolute top-0 right-0 m-2") %>
+      <div>
+        <div class="text-sm font-bold text-center">Address:</div>
+        <div class="text-sm text-center">
+          <p>to 
             <% if @note.recipient.present? %>
-                <%= @note.recipient %>
-            <%else%>
-                Anonymous
+              <%= @note.recipient %>
+            <% else %>
+              Anonymous
             <% end %>
-        </p>
+          </p>
         </div>
-      </div>
-      <div class="mt-8">
-        <div class="text-sm text-gray-500">Date:</div>
-        <div class="text-gray-700"><%= @note.updated_at.strftime("%m/%d/%Y") %></div>
       </div>
     </div>
   </div>

@@ -9,4 +9,7 @@
   .base-text {
     @apply text-amber-50 font-serif;
   }
+  .dark-text {
+    @apply text-stone-900 font-serif;
+  }
 }
