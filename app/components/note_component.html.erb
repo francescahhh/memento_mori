@@ -12,6 +12,7 @@
     </div>
     <!-- Right side for the address -->
     <div class="border-l-2 border-gray-300">
+        <%= image_tag("stamp.svg", :alt => "stamp") %>
       <div class="absolute top-0 border-l-2 right-0 m-2 p-1">
       <% if helpers.current_user.id == @note.user_id %>    
 <%= button_to "Delete", @note, method: :delete, class: "button py-1 px-2 " %>
