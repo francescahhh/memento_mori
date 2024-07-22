@@ -1,0 +1,13 @@
+<div id="candles" class="min-w-full">
+    <% if @candle.lit == true %>
+         <%= image_tag("in_memory_of_lit.svg", :alt => "candle", class: "border border-amber-50 rounded-xl hover:cursor-pointer hover:animate-pulse") %>
+         <% else %>
+          <%= image_tag("in_memory_of_unlit.svg", :alt => "candle", class:"border border-amber-50 rounded-xl hover:cursor-pointer hover:animate-pulse") %>
+          <% end %>
+     <h3 class="base-text">
+    <%= @candle.name %>
+  </h3>
+      <p>
+        <%= link_to "Show this candle", @candle, class: "button" %>
+      </p>
+  </div>

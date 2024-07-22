@@ -1,7 +1,8 @@
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
 
-    <%= render @candle %>
+       <%= render(CandleComponent.new(candle: @candle)) do %>
+    <% end %>
 
     <%= link_to "Edit", edit_candle_path(@candle), class: "button" %>
     <%= link_to "Back to candles", candles_path, class: "button" %>
