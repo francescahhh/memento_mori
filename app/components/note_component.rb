@@ -5,3 +5,4 @@ class NoteComponent < ViewComponent::Base
       @note = note
     end
   end
+  

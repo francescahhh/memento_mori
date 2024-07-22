@@ -42,15 +42,15 @@ class CandlesController < ApplicationController
   end
 
   private
-    def set_candle
-      @candle = Candle.find(params[:id])
-    end
+  def set_candle
+    @candle = Candle.find(params[:id])
+  end
 
-    def candle_params
-      params.require(:candle).permit(:name, :lit)
-    end
+  def candle_params
+    params.require(:candle).permit(:name, :lit)
+  end
     
-    def enqueue_unlit_job
-      CandleUnlitJob.set(wait: 24.hours).perform_later(@candle.id)
-    end
+  def enqueue_unlit_job
+    CandleUnlitJob.set(wait: 24.hours).perform_later(@candle.id)
+  end
 end

@@ -3,13 +3,9 @@
    <h2 class="font-bold base-text">Postcards</h2>
       <%= link_to "New Postcard", new_note_path, class: "button cursor-pointer" %>
   </div>
-
-    
-
   <% @notes.each do |note| %>
     <div>
-        <%= render(NoteComponent.new(note: note)) do %>
-    <% end %>
+        <%= render(NoteComponent.new(note: note)) %>
     </div>
   <% end %>
 <% end %>

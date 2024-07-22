@@ -4,11 +4,9 @@
     <h2 class="base-text">Candles</h2>
     <%= link_to "New candle", new_candle_path, class: "button" %>
   </div>
-
-    <% @candles.each do |candle| %>
+  <% @candles.each do |candle| %>
     <div>
-        <%= render(CandleComponent.new(candle: candle)) do %>
-    <% end %>
+        <%= render(CandleComponent.new(candle: candle)) %>
     </div>
   <% end %>
 </div>

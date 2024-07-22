@@ -1,4 +1,4 @@
-    <% if helpers.user_signed_in? %>
+<% if helpers.user_signed_in? %>
       <%= link_to "About Us", about_path, class: "button" %>
       <%= link_to "Postcards", notes_path, class: "button" %>
       <%= link_to "Candles", candles_path, class: "button" %>
@@ -7,4 +7,3 @@
   <%= link_to 'Sign In', new_user_session_path, class: "button" %>
   <%= link_to 'Sign Up', new_user_registration_path, class: "button" %>
 <% end %>
-

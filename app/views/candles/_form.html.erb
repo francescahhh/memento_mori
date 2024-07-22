@@ -2,7 +2,6 @@
   <% if candle.errors.any? %>
     <div id="error_explanation" class="bg-red-50 base-text text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(candle.errors.count, "error") %> prohibited this candle from being saved:</h2>
-
       <ul>
         <% candle.errors.each do |error| %>
           <li><%= error.full_message %></li>

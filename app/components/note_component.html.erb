@@ -10,24 +10,25 @@
         <%= button_to "Delete", @note, method: :delete, class: "bg-red-500 text-white py-1 px-2 rounded shadow-md" %>
       <% end %>
     </div>
+    ß
     <!-- Right side for the address -->
     <div class="border-l-2 border-gray-300">
         <%= image_tag("stamp.svg", :alt => "stamp") %>
       <div class="absolute top-0 border-l-2 right-0 m-2 p-1">
-      <% if helpers.current_user.id == @note.user_id %>    
-<%= button_to "Delete", @note, method: :delete, class: "button py-1 px-2 " %>
-     <% end %>
+        <% if helpers.current_user.id == @note.user_id %>    
+            <%= button_to "Delete", @note, method: :delete, class: "button py-1 px-2 " %>
+        <% end %>
       </div>
       <div class="mb-4 mt-12">
         <div class="text-sm text-gray-500">Address:</div>
         <div class="text-gray-700">
-        <p>to 
-        <% if @note.recipient.present? %>
-             <%= @note.recipient %>
-        <%else%>
-   Anonymous
-          <% end %>
-          </p>
+        <p> to 
+            <% if @note.recipient.present? %>
+                <%= @note.recipient %>
+            <%else%>
+                Anonymous
+            <% end %>
+        </p>
         </div>
       </div>
       <div class="mt-8">

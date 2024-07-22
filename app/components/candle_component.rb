@@ -5,3 +5,4 @@ class CandleComponent < ViewComponent::Base
       @candle = candle
     end
   end
+  
