@@ -20,8 +20,8 @@ class CandlesController < ApplicationController
     @candle.user = current_user  
 
       if @candle.save
-        enqueue_unlit_job if @candle.lit?
         redirect_to candles_url notice: "Candle created!"
+        enqueue_unlit_job if @candle.lit?
       else
         render :new, status: :unprocessable_entity
       end
