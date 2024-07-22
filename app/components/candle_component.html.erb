@@ -1,9 +1,9 @@
 <div id="candles" class="min-w-full text-center">
   <div>
     <% if @candle.lit %>
-      <%= image_tag("in_memory_of_lit.svg", alt: "candle", class: "border border-amber-50 rounded-xl hover:cursor-pointer hover:animate-pulse mx-auto") %>
+      <%= image_tag("in_memory_of_lit.svg", alt: "candle", class: "border border-amber-50 rounded-xl hover:cursor-pointer animate-pulse mx-auto") %>
     <% else %>
-      <%= image_tag("in_memory_of_unlit.svg", alt: "candle", class: "border border-amber-50 rounded-xl hover:cursor-pointer hover:animate-pulse mx-auto") %>
+      <%= image_tag("in_memory_of_unlit.svg", alt: "candle", class: "border border-amber-50 rounded-xl hover:cursor-pointer opacity-15 mx-auto") %>
     <% end %>
   </div>
   <p class="text-amber-50 text-2xl font-serif mb-1">
