@@ -12,4 +12,7 @@
   .dark-text {
     @apply text-stone-900 font-serif;
   }
+  .error-text {
+    @apply text-red-800 font-serif;
+  }
 }

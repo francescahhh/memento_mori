@@ -16,8 +16,8 @@
      <%= image_tag("memento_mori.svg", :alt => "memento mori") %>
                <%= render(NavigationComponent.new) do %>
     <% end %>
-          <p class="notice base-text text-red-800"><%= notice %></p>
-       <p class="alert base-text text-red-800"><%= alert %></p>
+          <p class="notice error-text"><%= notice %></p>
+       <p class="alert error-text"><%= alert %></p>
       <%= yield %>
     </main>
   </body>

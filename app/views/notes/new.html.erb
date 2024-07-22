@@ -5,7 +5,7 @@
     <%= form.label :recipient, class: "base-text"%><br>
     <%= form.text_field :recipient, class: "bg-amber-50 rounded" %>
     <% @note.errors.full_messages_for(:recipient).each do |message| %>
-      <div><%= message %></div>
+      <div class="error-text"><%= message %></div>
     <% end %>
   </div>
 
@@ -13,7 +13,7 @@
     <%= form.label :title, class: "base-text"%><br>
     <%= form.text_field :title, class: "bg-amber-50 rounded" %>
     <% @note.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
+      <div class="error-text"><%= message %></div>
     <% end %>
   </div>
 
@@ -21,7 +21,7 @@
     <%= form.label :body, class: "base-text" %><br>
     <%= form.text_area :body, class: "bg-amber-50 rounded" %><br>
     <% @note.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
+      <div class="error-text"><%= message %></div>
     <% end %>
   </div>
 
