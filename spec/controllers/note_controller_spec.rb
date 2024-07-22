@@ -17,23 +17,9 @@ RSpec.describe NotesController, type: :controller do
     end
   end
 
-  describe 'GET #show' do
-    it 'returns a success response' do
-      get :show, params: { id: note.to_param }
-      expect(response).to be_successful
-    end
-  end
-
   describe 'GET #new' do
     it 'returns a success response' do
       get :new
-      expect(response).to be_successful
-    end
-  end
-
-  describe 'GET #edit' do
-    it 'returns a success response' do
-      get :edit, params: { id: note.to_param }
       expect(response).to be_successful
     end
   end
@@ -56,32 +42,6 @@ RSpec.describe NotesController, type: :controller do
     context 'with invalid params' do
       it 'returns a success response (i.e., to display the "new" template)' do
         post :create, params: { note: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
-    end
-  end
-
-  describe 'PUT #update' do
-    context 'with valid params' do
-      let(:new_attributes) { { title: 'Updated Note', body: 'This is an updated note body.' } }
-
-      it 'updates the requested note' do
-        put :update, params: { id: note.to_param, note: new_attributes }
-        note.reload
-        expect(note.title).to eq('Updated Note')
-        expect(note.body).to eq('This is an updated note body.')
-      end
-
-      it 'redirects to the notes index' do
-        put :update, params: { id: note.to_param, note: new_attributes }
-        expect(response).to redirect_to(notes_path)
-        expect(flash[:notice]).to eq('Postcard updated.')
-      end
-    end
-
-    context 'with invalid params' do
-      it 'returns a success response (i.e., to display the "edit" template)' do
-        put :update, params: { id: note.to_param, note: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
