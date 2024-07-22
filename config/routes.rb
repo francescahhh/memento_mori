@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :notes
   get "/about", to: "about#index"
 
+  resources :candles
+
   devise_scope :user do                                                           
        get '/users/sign_out' => 'devise/sessions#destroy'  
        post '/users/sign_out' => 'devise/sessions#destroy'   

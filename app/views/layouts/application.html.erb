@@ -14,7 +14,8 @@
   <body class="bg-stone-900">
     <main class="container mx-auto px-5 prose">
      <%= image_tag("memento_mori.svg", :alt => "memento mori") %>
-            
+               <%= render(NavigationComponent.new) do %>
+    <% end %>
           <p class="notice error-text"><%= notice %></p>
        <p class="alert error-text"><%= alert %></p>
       <%= yield %>
