@@ -3,6 +3,6 @@ class CandleUnlitJob < ApplicationJob
 
   def perform(candle_id)
     candle = Candle.find(candle_id)
-    candle.update(lit: false)
+    candle.update!(lit: false)
   end
 end
