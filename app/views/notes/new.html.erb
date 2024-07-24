@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <h2 class="base-text">New Postcard</h2>
 <div class="m-4">
 <%= form_with model: @note do |form| %>
@@ -31,3 +32,4 @@
   </div>
 <% end %>
 </div>
+<% end %>

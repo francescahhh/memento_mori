@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root "notes#index"
+  root "about#index"
+    get "/about", to: "about#index"
 
   resources :notes
-  get "/about", to: "about#index"
 
   resources :candles
 

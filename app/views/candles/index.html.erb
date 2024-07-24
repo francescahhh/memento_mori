@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div class="w-full">
   <% content_for :title, "Candles" %>
   <div class="flex justify-between items-center mb-6">
@@ -17,3 +18,4 @@
     <% end %>
   </div>
 </div>
+<% end %>
