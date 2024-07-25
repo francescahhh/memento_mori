@@ -1,35 +1,36 @@
 <% if user_signed_in? %>
 <h2 class="base-text">New Postcard</h2>
 <div class="m-4">
-<%= form_with model: @note do |form| %>
-  <div>
-    <%= form.label :recipient, class: "base-text"%><br>
-    <%= form.text_field :recipient, class: "bg-amber-50 rounded" %>
-    <% @note.errors.full_messages_for(:recipient).each do |message| %>
-      <div class="error-text"><%= message %></div>
-    <% end %>
-  </div>
+  <p class="base-text"><strong class="base-text">*</strong> indicates required fields</p>
+  <%= form_with model: @note do |form| %>
+    <div>
+      <%= form.label :recipient, class: "base-text"%><br>
+      <%= form.text_field :recipient, class: "bg-amber-50 rounded" %>
+      <% @note.errors.full_messages_for(:recipient).each do |message| %>
+        <div class="error-text"><%= message %></div>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.label :title, class: "base-text"%><br>
-    <%= form.text_field :title, class: "bg-amber-50 rounded" %>
-    <% @note.errors.full_messages_for(:title).each do |message| %>
-      <div class="error-text"><%= message %></div>
-    <% end %>
-  </div>
+    <div>
+      <%= form.label :title, class: "base-text"%><strong class="base-text">*</strong><br>
+      <%= form.text_field :title, class: "bg-amber-50 rounded", required: true %>
+      <% @note.errors.full_messages_for(:title).each do |message| %>
+        <div class="error-text"><%= message %></div>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.label :body, class: "base-text" %><br>
-    <%= form.text_area :body, class: "bg-amber-50 rounded" %><br>
-    <% @note.errors.full_messages_for(:body).each do |message| %>
-      <div class="error-text"><%= message %></div>
-    <% end %>
-  </div>
+    <div>
+      <%= form.label :body, class: "base-text" %><strong class="base-text">*</strong><br>
+      <%= form.text_area :body, class: "bg-amber-50 rounded", required: true %><br>
+      <% @note.errors.full_messages_for(:body).each do |message| %>
+        <div class="error-text"><%= message %></div>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.submit "Send Postcard", class: "button cursor-pointer" %>
+    <div>
+      <%= form.submit "Send Postcard", class: "button cursor-pointer" %>
       <i class="fa-regular fa-paper-plane p-2 text-amber-50 text-xl"></i>
-  </div>
-<% end %>
+    </div>
+  <% end %>
 </div>
 <% end %>
