@@ -6,7 +6,6 @@ RSpec.describe 'Notes Index Page', type: :system do
   let!(:note_1) { create(:note, title: "User 1 Test Note", body: "This is a test note from User 1", user: user) }
   let!(:note_2) { create(:note, title: "User 2 Test Note", body: "This is a test note from User 2", user: user) }
 
-
   context 'when user is signed in' do
     before do
       sign_in user
@@ -28,7 +27,7 @@ RSpec.describe 'Notes Index Page', type: :system do
     end
 
     it 'allows user to create a new note' do
-      click_link 'New Postcard'
+      find('#new-note').click
     end
   end
 

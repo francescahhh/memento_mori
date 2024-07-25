@@ -13,7 +13,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::IntegrationHelpers, type: :system 
   config.before(:each, type: :system) do
-    driven_by :rack_test
+    driven_by :selenium_chrome
   end
  config.before(:each, type: :system, js: true) do
     driven_by :selenium_chrome_headless
@@ -40,9 +40,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
   config.infer_spec_type_from_file_location!
-    config.before(:each, type: :system) do
-    driven_by :selenium_chrome
-  end
 end
 
 Shoulda::Matchers.configure do |config|

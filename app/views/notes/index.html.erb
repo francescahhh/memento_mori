@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="flex justify-between items-center mb-6">
     <h2 class="font-bold base-text">Postcards</h2>
-    <%= link_to new_note_path, class: "button cursor-pointer flex items-center space-x-2" do %>
+    <%= link_to new_note_path, class: "button cursor-pointer flex items-center space-x-2", id: "new-note" do %>
       <i class="fa-solid fa-pencil"></i>
       <span>New Postcard</span>
     <% end %>

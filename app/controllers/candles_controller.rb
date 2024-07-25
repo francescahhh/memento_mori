@@ -1,5 +1,6 @@
 class CandlesController < ApplicationController
   before_action :set_candle, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   def index
     @candles = Candle.where(user_id: current_user.id)
