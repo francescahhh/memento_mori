@@ -47,8 +47,4 @@ class NotesController < ApplicationController
   def note_params
     params.require(:note).permit(:title, :body, :recipient)
   end
-
-  def user_notes
-    @user_notes = Note.where(user_id: current_user.id)
-  end
 end
