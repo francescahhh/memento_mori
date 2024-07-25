@@ -14,8 +14,9 @@
     </div>
 
     <!-- Right side for the address -->
-    <div class="border-t-2 md:border-t-0 md:border-l-2 border-gray-300 px-5 md:w-1/3 flex items-center justify-center mt-4 md:mt-0 md:h-full">
-      <%= image_tag("stamp.svg", alt: "stamp", class: "absolute top-0 right-0 m-2 hidden md:block") %>
+    <div class="border-t-2 md:border-t-0 md:border-l-2 border-gray-300 px-5 md:w-1/3 flex items-center justify-center mt-4 md:mt-0 md:h-full relative">
+      <%= image_tag("stamp.svg", alt: "stamp", class: "hidden md:block absolute top-0 right-0 m-2") %>
+      <%= image_tag("stamp.svg", alt: "stamp", class: "md:hidden absolute bottom-0 right-0 m-0") %>
       <div>
         <div class="text-sm font-bold text-center">Address:</div>
         <div class="text-sm text-center">
