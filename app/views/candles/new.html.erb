@@ -3,8 +3,8 @@
 <div class="m-4">
   <%= form_with model: @candle do |form| %>
   <div>
-    <%= form.label :name, class: "base-text" %><br>
-    <%= form.text_field :name, class: "bg-amber-50 rounded" %>
+    <%= form.label :name, "Create a candle for...", class: "base-text" %><br>
+    <%= form.text_field :name, placeholder: "Name", class: "bg-amber-50 rounded" %>
     <% @candle.errors.full_messages_for(:name).each do |message| %>
       <div class="error-text"><%= message %></div>
     <% end %>
