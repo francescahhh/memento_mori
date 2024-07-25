@@ -22,6 +22,7 @@ class CandlesController < ApplicationController
       if @candle.save
         enqueue_unlit_job if @candle.lit?
         redirect_to candles_url notice: "Candle created!"
+
       else
         render :new, status: :unprocessable_entity
       end
@@ -51,6 +52,10 @@ class CandlesController < ApplicationController
   end
     
   def enqueue_unlit_job
-    CandleUnlitJob.set(wait: 24.hours).perform_later(@candle.id)
+    if @candle.persisted?
+      CandleUnlitJob.set(wait: 24.hours).perform_later(@candle.id)
+    else
+      Rails.logger.warn "CandlesController: Attempted to enqueue job for unsaved candle."
+    end
   end
 end
