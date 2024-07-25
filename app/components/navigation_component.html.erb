@@ -1,10 +1,15 @@
+ 
+<nav class="flex flex-col md:flex-row justify-between items-center p-2">
   <% if helpers.user_signed_in? %>
-      <%= link_to "About Us", about_url, class: "button" %>
-      <%= link_to "Postcards", notes_url, class: "button" %>
-      <%= link_to "Candles", candles_url, class: "button" %>
-      <%= link_to "Sign Out", destroy_user_session_url, method: :destroy, class: "button" %>
+  <div class="flex flex-col md:flex-row items-center">
+    <%= link_to "About Us", about_url, class: "button mb-2 md:mb-0 md:mr-1" %>
+    <%= link_to "Postcards", notes_url, class: "button mb-2 md:mb-0 md:mr-1" %>
+    <%= link_to "Candles", candles_url, class: "button mb-2 md:mb-0 md:mr-1" %>
+    <%= link_to "Sign Out", destroy_user_session_url, method: :destroy, class: "button mb-2 md:mb-0 md:mr-1" %>
 <% else %>
-  <%= link_to 'Sign In', new_user_session_url, class: "button" %>
-  <%= link_to 'Sign Up', new_user_registration_url, class: "button" %>
+ <div class="flex flex-col md:flex-row items-center">
+      <%= link_to 'Sign In', new_user_session_url, class: "button mb-2 md:mb-0 md:mr-1" %>
+      <%= link_to 'Sign Up', new_user_registration_url, class: "button" %>
+    </div>
 <% end %>
-
+</nav>
