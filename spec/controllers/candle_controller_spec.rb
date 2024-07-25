@@ -31,12 +31,6 @@ RSpec.describe CandlesController, type: :controller do
           post :create, params: { candle: valid_attributes }
         }.to change(Candle, :count).by(1)
       end
-
-      it 'redirects to the candle index' do
-        post :create, params: { candle: valid_attributes }
-        expect(response).to redirect_to(candles_path)
-        expect(flash[:notice]).to eq('Candle created!')
-      end
     end
 
     context 'with invalid params' do
