@@ -24,7 +24,7 @@ RSpec.describe 'Candles Index Page', type: :system do
         expect(page).to_not have_content(candle_2.name)
     end
 
-    it 'allows user to create a new note' do
+    it 'allows user to create a new candle' do
       click_link 'New Candle'
     end
   end
@@ -34,7 +34,7 @@ RSpec.describe 'Candles Index Page', type: :system do
       visit candles_path
     end
 
-    it 'does not display the notes' do 
+    it 'does not display the candles' do 
         expect(page).to_not have_content(candle_1.name)
         expect(page).to_not have_content(candle_2.name)
     end
